@@ -38,4 +38,14 @@ public class Rekesz {
         }
         return ossz;
     }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (Palack item:
+             palackok) {
+            s += item+"\n";
+        }
+        return s;
+    }
 }
