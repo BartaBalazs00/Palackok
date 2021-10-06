@@ -31,6 +31,20 @@ public class Palack {
         return this.maxUrtartalom/35 + this.jelenlegiUrtartalom;
     }
 
+    public boolean egyenloekE(Palack p){
+        boolean egyseznekE = false;
+        if (
+                this.nev.equals(p.nev) &&
+                this.maxUrtartalom == p.maxUrtartalom &&
+                this.jelenlegiUrtartalom == p.jelenlegiUrtartalom
+            )
+        {
+            egyseznekE = true;
+        }
+
+        return egyseznekE;
+    }
+
     @Override
     public String toString() {
         return String.format("Palack, benne levo ital: %s, jelenleg %d ml van benne, maximum %d ml fer bele.",
