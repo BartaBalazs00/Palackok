@@ -16,12 +16,13 @@ public class Teszt {
 
     private void masodik() {
         beolvas();
+        System.out.println(this.toString());
     }
 
     private void beolvas() {
         try {
             BufferedReader br = new BufferedReader(new FileReader("palackok.txt"));
-            rekeszek.add(new Rekesz(10000));
+            rekeszek.add(new Rekesz(1000));
             String sor = br.readLine();
             while (sor != null){
                 Palack p;
@@ -35,11 +36,11 @@ public class Teszt {
                 }
                 boolean siker = rekeszek.get(rekeszek.size()-1).ujPalack(p);
                 if (!siker){
-                    rekeszek.add(new Rekesz(10000));
+                    rekeszek.add(new Rekesz(1000));
                 }
                 sor = br.readLine();
-                br.close();
             }
+            br.close();
         }catch (FileNotFoundException e){
             e.getMessage();
         } catch (IOException e){
@@ -47,6 +48,7 @@ public class Teszt {
         } catch (Exception e){
             e.getMessage();
         }
+
     }
 
     private void elso(){
@@ -62,5 +64,15 @@ public class Teszt {
         System.out.println(p2);
         System.out.println(vp1);
         System.out.println(r);
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        for (int i = 0; i < rekeszek.size(); i++) {
+            s+= (i+1)+" rekesz: \n";
+            s+=rekeszek.get(i)+"\n\n";
+        }
+        return s;
     }
 }
