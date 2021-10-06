@@ -45,6 +45,18 @@ public class Palack {
         return egyseznekE;
     }
 
+    public void hozzaOnt(Palack p)
+    {
+        this.setJelenlegiUrtartalom(this.jelenlegiUrtartalom+p.jelenlegiUrtartalom);
+        if (this.nev == null)
+        {
+            this.nev = p.nev;
+        }
+        else if (!this.nev.equals(p.nev))
+        {
+            this.nev = "keverék";
+        }
+    }
     @Override
     public String toString() {
         return String.format("Palack, benne levo ital: %s, jelenleg %d ml van benne, maximum %d ml fer bele.",
