@@ -9,6 +9,10 @@ public class VisszaValthatoPalack extends Palack{
         this.palackDij = palackDij;
     }
 
+    public int getPalackDij() {
+        return palackDij;
+    }
+
     @Override
     public String toString() {
         return "Visszaváltható"+super.toString();
