@@ -1,4 +1,16 @@
 package hu.bartabalazs;
 
-public class VisszaValthatoPalack {
+public class VisszaValthatoPalack extends Palack{
+
+    private int palackDij;
+
+    public VisszaValthatoPalack(String nev, int maxUrtartalom, int jelenlegiUrtartalom, int palackDij) {
+        super(nev, maxUrtartalom, jelenlegiUrtartalom);
+        this.palackDij = palackDij;
+    }
+
+    @Override
+    public String toString() {
+        return "Visszaváltható"+super.toString();
+    }
 }
