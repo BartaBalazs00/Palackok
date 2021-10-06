@@ -22,6 +22,18 @@ public class Palack {
     }
 
     public void setJelenlegiUrtartalom(int jelenlegiUrtartalom) {
-        this.jelenlegiUrtartalom = jelenlegiUrtartalom;
+        this.jelenlegiUrtartalom = Math.min(jelenlegiUrtartalom, this.maxUrtartalom);
+        if (this.jelenlegiUrtartalom == 0) {
+            this.nev = null;
+        }
+    }
+    public int suly(){
+        return this.maxUrtartalom/35 + this.jelenlegiUrtartalom;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Palack, benne levo ital: %s, jelenleg %d ml van benne, maximum %d ml fer bele.",
+                this.nev, this.jelenlegiUrtartalom, this.maxUrtartalom);
     }
 }
